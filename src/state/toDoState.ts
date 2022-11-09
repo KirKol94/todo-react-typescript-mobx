@@ -12,7 +12,7 @@ class toDoState {
   }
 
   addTodo = (todo: IToDo) => {
-    this.todos = [todo, ...this.todos]
+    this.todos = [ todo, ...this.todos ]
   }
 
   removeTodo = (id: number) => {
@@ -21,23 +21,23 @@ class toDoState {
 
   completeTodo = (id: number): void => {
     this.todos = this.todos.map(todo =>
-      todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      todo.id === id ? { ...todo, completed: !todo.completed } : todo,
     )
-  }
-
-  setToDo = (todos: IToDo[]) => {
-    this.todos = [...this.todos, ...todos]
   }
 
   fetchToDoItems = async () => {
     const res = await axios.get<IToDo[]>(
-      'https://jsonplaceholder.typicode.com/todos'
+      'https://jsonplaceholder.typicode.com/todos',
     )
-    this.setToDo(res.data)
+    this._setToDo(res.data)
   }
 
   filter = (condition: FilterType) => {
     this.filteredBy = condition
+  }
+
+  private _setToDo = (todos: IToDo[]) => {
+    this.todos = [ ...this.todos, ...todos ]
   }
 }
 

@@ -16,9 +16,9 @@ const ToDoList = () => {
       case 'all':
         return todos
       case 'isCompleted':
-        return [...todos.filter(todo => todo.completed)]
+        return [ ...todos.filter(todo => todo.completed) ]
       case 'isNotCompleted':
-        return [...todos.filter(todo => !todo.completed)]
+        return [ ...todos.filter(todo => !todo.completed) ]
       default:
         return todos
     }
@@ -26,9 +26,10 @@ const ToDoList = () => {
 
   return (
     <div className='todo__list'>
-      {filtered().map(todo => (
-        <ToDoItem key={todo.id} todo={todo} />
-      ))}
+      {filtered()
+        .map(todo => (
+          <ToDoItem key={todo.id} todo={todo}/>
+        ))}
     </div>
   )
 }

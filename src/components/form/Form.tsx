@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
-
 import { IToDo } from '../../models/IToDo'
 import { observer } from 'mobx-react-lite'
 import toDoState from '../../state/toDoState'
 
 const Form = () => {
-  const [todo, setTodo] = useState<IToDo>({
+  const [ todo, setTodo ] = useState<IToDo>({
     id: 0,
     userId: 1,
     title: '',

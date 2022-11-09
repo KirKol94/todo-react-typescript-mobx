@@ -10,12 +10,13 @@ const App = () => {
 Два - удалить заметку
 Добавление заметки на enter и потерю фокуса с поля (или tab) `)
   }, [])
+
   return (
     <div className='todo'>
       <h1 className='todo__title'>ToDoList with react && typeScript && mobx</h1>{' '}
-      <Form />
-      <Filter />
-      <ToDoList />
+      <Form/>
+      <Filter/>
+      <ToDoList/>
     </div>
   )
 }

@@ -9,7 +9,7 @@ const Filter = () => {
     'todo__filter-item': true,
     _active: filteredBy === 'all',
   })
-
+  
   const filteredByIsCompletedClasses = classNames({
     'todo__filter-item': true,
     _active: filteredBy === 'isCompleted',
