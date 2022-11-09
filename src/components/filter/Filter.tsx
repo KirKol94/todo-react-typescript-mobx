@@ -1,21 +1,21 @@
-import classNames from 'classnames'
+import cn from 'classnames'
 import { observer } from 'mobx-react-lite'
-import toDoState from '../../state/toDoState'
+import toDoStore from '../../store/toDoStore'
 
 const Filter = () => {
-  const filteredBy = toDoState.filteredBy
+  const { filteredBy, filter } = toDoStore
 
-  const filteredByAllClasses = classNames({
+  const filteredByAllClasses = cn({
     'todo__filter-item': true,
     _active: filteredBy === 'all',
   })
-  
-  const filteredByIsCompletedClasses = classNames({
+
+  const filteredByIsCompletedClasses = cn({
     'todo__filter-item': true,
     _active: filteredBy === 'isCompleted',
   })
 
-  const filteredByIsNotCompletedClasses = classNames({
+  const filteredByIsNotCompletedClasses = cn({
     'todo__filter-item': true,
     _active: filteredBy === 'isNotCompleted',
   })
@@ -24,19 +24,19 @@ const Filter = () => {
     <div className='todo__filter'>
       <div
         className={filteredByAllClasses}
-        onClick={() => toDoState.filter('all')}
+        onClick={() => filter('all')}
       >
         Все
       </div>
       <div
         className={filteredByIsCompletedClasses}
-        onClick={() => toDoState.filter('isCompleted')}
+        onClick={() => filter('isCompleted')}
       >
         Выполненные
       </div>
       <div
         className={filteredByIsNotCompletedClasses}
-        onClick={() => toDoState.filter('isNotCompleted')}
+        onClick={() => filter('isNotCompleted')}
       >
         Не выполненные
       </div>

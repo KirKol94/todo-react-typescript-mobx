@@ -6,6 +6,10 @@
     margin: 1rem 0;
   }
 
+  &__subtitle{
+    @extend .todo__title;
+  }
+
   &__form {
     margin: 0.5rem 0;
 
@@ -19,7 +23,7 @@
     width: 100%;
 
     @include tablet {
-      padding: 1rem 0;
+      padding: 1rem;
     }
   }
 

@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { IToDo } from '../../models/IToDo'
 import { observer } from 'mobx-react-lite'
-import toDoState from '../../state/toDoState'
+import toDoStore from '../../store/toDoStore'
 
 const Form = () => {
-  const [ todo, setTodo ] = useState<IToDo>({
+  const [todo, setTodo] = useState<IToDo>({
     id: 0,
     userId: 1,
     title: '',
@@ -13,7 +13,7 @@ const Form = () => {
 
   const addToDo = () => {
     if (todo.title.trim()) {
-      toDoState.addTodo({ ...todo, id: new Date().getTime() })
+      toDoStore.addTodo({ ...todo, id: new Date().getTime() })
       setTodo({ ...todo, title: '' })
     }
   }
@@ -37,7 +37,7 @@ const Form = () => {
       <input
         className='todo__form-input'
         type='text'
-        placeholder='Новая задача'
+        placeholder="Новая заметка"
         value={todo.title}
         onChange={onChangeInput}
         onBlur={onInputBlurAddToDO}
