@@ -19,13 +19,14 @@
     margin: 0.5rem 0;
 
     @include tablet {
-      margin: 1rem 0;
+      //margin: 1rem 0;
     }
   }
 
   &__form-input {
     padding: 0.5rem;
     width: 100%;
+    font-size: 1rem;
 
     @include tablet {
       padding: 1rem;
@@ -79,6 +80,14 @@
     cursor: pointer;
     border-left: 3px solid blue;
 
+    &-enter-active {
+      animation: toLeft 500ms forwards;
+    }
+
+    &-exit-active {
+      animation: toLeft 500ms reverse;
+    }
+
     @include tablet {
       padding: 1rem;
     }
@@ -105,14 +114,6 @@
       font-weight: 600;
     }
   }
-}
-
-.todo__item-enter-active {
-  animation: toLeft 500ms forwards;
-}
-
-.todo__item-exit-active {
-  animation: toLeft 500ms reverse;
 }
 
 @keyframes toLeft {

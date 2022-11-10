@@ -21,7 +21,7 @@ const Form = () => {
       toDoStore.addTodo({ ...todo, id: new Date().getTime() })
       setTodo({ ...todo, title: '' })
       setIsShowConfetti(true)
-      setTimeout(() => setIsShowConfetti(false), 3000)
+      setTimeout(() => setIsShowConfetti(false), 2500)
     }
   }
 
