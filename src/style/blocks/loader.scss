@@ -1,4 +1,12 @@
 .loader {
-  padding: 40px 0;
-  text-align: center;
+  animation: pulse infinite linear 1s;
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

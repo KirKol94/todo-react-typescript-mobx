@@ -25,7 +25,7 @@ const ToDoList = () => {
 
   if (isFetching){
     return(
-      <div className="loader">Загрузка...</div>
+      <div className="loader todo__loader">Загрузка...</div>
     )
   }
 

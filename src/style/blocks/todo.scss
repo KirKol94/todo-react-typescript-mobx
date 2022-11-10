@@ -1,6 +1,11 @@
 .todo {
   @extend .container;
 
+  &__loader{
+    padding: 0 50px;
+    text-align: center;
+  }
+
   &__title {
     @extend .title;
     margin: 1rem 0;
@@ -44,11 +49,22 @@
       text-decoration: underline;
       background-color: rgba(#000, 0.7);
       color: #fff;
+
+      &:hover{
+        outline: none;
+        cursor: default;
+      }
     }
 
     @include tablet {
       padding: 1rem;
       font-size: 1rem;
+    }
+
+    @include notebook{
+      &:hover{
+        outline: 1px solid blue;
+      }
     }
   }
 
@@ -65,6 +81,12 @@
 
     @include tablet {
       padding: 1rem;
+    }
+
+    @include notebook{
+      &:hover{
+        outline: 1px solid blue;
+      }
     }
   }
 
