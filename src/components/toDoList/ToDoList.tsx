@@ -26,7 +26,7 @@ const ToDoList = () => {
 
   return (
     <>
-      {isFetching && <div className="loader todo__loader">Загрузка...</div>}
+      {isFetching && <div className="todo__loader loader ">Загрузка...</div>}
       {!isFetching && (
         <TransitionGroup component="div" className='todo__list'>
           {filtered().map(todo => (
