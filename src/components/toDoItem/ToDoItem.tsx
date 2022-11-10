@@ -12,8 +12,8 @@ const ToDoItem: FC<IToDoItemProps> = ({ todo }) => {
   const { removeTodo } = toDoStore
 
   const todo__item = cn({
-    todo__item: true,
-    todo__completed: todo.completed,
+    'todo__item': true,
+    'todo__completed': todo.completed,
   })
 
   return (

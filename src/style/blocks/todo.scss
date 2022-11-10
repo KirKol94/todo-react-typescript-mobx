@@ -1,7 +1,7 @@
 .todo {
   @extend .container;
 
-  &__loader{
+  &__loader {
     padding: 0 50px;
     text-align: center;
   }
@@ -11,7 +11,7 @@
     margin: 1rem 0;
   }
 
-  &__subtitle{
+  &__subtitle {
     @extend .todo__title;
   }
 
@@ -50,7 +50,7 @@
       background-color: rgba(#000, 0.7);
       color: #fff;
 
-      &:hover{
+      &:hover {
         outline: none;
         cursor: default;
       }
@@ -61,8 +61,8 @@
       font-size: 1rem;
     }
 
-    @include notebook{
-      &:hover{
+    @include notebook {
+      &:hover {
         outline: 1px solid blue;
       }
     }
@@ -83,8 +83,8 @@
       padding: 1rem;
     }
 
-    @include notebook{
-      &:hover{
+    @include notebook {
+      &:hover {
         outline: 1px solid blue;
       }
     }
@@ -104,5 +104,26 @@
       font-size: 1.2rem;
       font-weight: 600;
     }
+  }
+}
+
+.todo__item-enter-active {
+  animation: toLeft 500ms forwards;
+}
+
+.todo__item-exit-active {
+  animation: toLeft 500ms reverse;
+}
+
+@keyframes toLeft {
+  0% {
+    transform: translateX(50%);
+    background-color: rgba(#000, 0.7);;
+    color: #fff;
+  }
+  100% {
+    transform: translateX(0);
+    background-color: #fff;
+    color: #000;;
   }
 }
